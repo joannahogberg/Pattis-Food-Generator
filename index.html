@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>FOODIE</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="h1Header">
+                <h1>–– PATTIS DINNER HELPER ––</h1>
+            </div>
+
+        </header>
+
+        <main>
+
+            <div id="getRecepie">
+                <h3>Tired of cooking?</h3>
+                <p>Having a hard time finding inspiration in the kitchen? Well, let me help you with some of my favorite recepies!</p>
+                <p>By pressing the button RECEPIE a random dish will be presented and hopefully give you some inspiration for tonights cooking. If you are a vegetarian you can of course choose to get only vegetarian dishes.</p>
+                <p>Buen provecho!</p>
+                <button type="button" id="runBtn" title="Click to generate recepie">RECEPIE</button>
+                <label><input type="checkbox" name="addition" value="vego" id="veg"> I'm vegetarian</label>
+            </div>
+
+            <div id="showRecepie">
+                <p id="dish">Pattis suggestion for today is:</p>
+                <a target="_blank" id="recepie" title="Go to recepie" href=""><img id="image"><span id="getRec"></span></a>
+            </div>
+
+
+        </main>
+        <!--end main-->
+    </div>
+    <!--end wrapper-->
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
