@@ -182,6 +182,18 @@ a span:hover {
 
 /* inställningar media queries */
 
+@media screen and (max-width:500px) {
+    #runBtn {
+        font-size: 1.2em;
+    }
+    #getRecepie {
+        padding: 1em;
+    }
+    p {
+        font-size: 1.3em;
+    }
+}
+
 @media screen and (max-width:450px) {
     h1 {
         font-size: 1.5em;
