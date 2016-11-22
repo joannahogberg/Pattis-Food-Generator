@@ -1,157 +1,128 @@
-@charset "UTF-8";
-
-/*  
-Sticky Footer Solution
-by Steve Hatcher 
-http://stever.ca
-http://www.cssstickyfooter.com
-*/
-
-
-/* * {margin:0;padding:0;} inställning redan utförd för berörda element */
-
-
-/* must declare 0 margins on everything, also for main layout components use padding, not 
-vertical margins (top and bottom) to add spacing, else those margins get added to total height 
-and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
-
-html,
 body {
-    height: 100%;
-}
-
-#wrapper {
     min-height: 100%;
-}
-
-main {
-    overflow: auto;
-    padding-bottom: 30px;
-}
-
-
-/* must be same height as the footer */
-
-footer {
-    position: relative;
-    margin-top: -50px;
-    /* negative value of footer height */
-    height: 30px;
-    clear: both;
-}
-
-
-/* Endast 20px, eftersom footer har padding på 10px, så höjden blir 40px */
-
-
-/*Opera Fix*/
-
-body:before {
-    /* thanks to Maleika (Kohoutec)*/
-    content: "";
     height: 100%;
-    float: left;
-    width: 0;
-    margin-top: -32767px;
-    /* thank you Erik J - negate effect of float*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgrey;
+    font-size: 12px;
+    text-align: center;
 }
 
-
-/* IMPORTANT
-You also need to include this conditional style in the <head> of your HTML file to feed this style to IE 6 and lower and 8 and higher.
-<!--[if !IE 7]>
-	<style type="text/css">
-		#wrap {display:table;height:100%}
-	</style>
-<![endif]-->
-*/
-
-
-/* end sticky footer inställningar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 #wrapper {
-    background-color: lightgrey;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     max-width: 900px;
     margin: 0 auto;
-}
-
-body {
-    background-color: lightgrey;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
 }
 
 header {
     background-image: url(pics/background_header.jpg);
     background-position: center;
     height: 150px;
-    text-align: center;
+    width: 100%;
+}
+
+h1,
+#dish,
+a span {
+    color: #f90;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2%;
 }
 
 h1 {
     padding-top: 50px;
     font-size: 3em;
-    color: #f90;
-    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#getRecepie,
+#showRecepie,
+img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #getRecepie {
     background-color: #e8c1c0;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
     padding: 2em;
     padding-top: 1em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    align-items: center;
 }
 
 h3 {
     font-size: 2em;
-    margin-top: 10px;
+    padding: 0.5em;
 }
 
 p {
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+#getDish {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
     font-size: 1.2em;
 }
 
 #runBtn {
     background-color: #8a6e66;
     color: white;
-    border-radius: 9px;
-    margin-right: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 6px;
     padding: 5px;
     cursor: pointer;
-    display: inline;
+    margin: auto;
+    flex: 2;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1.5;
+    margin-left: 5px;
+}
+
+label span {
+    margin: 3px;
 }
 
 #runBtn:hover {
     background-color: #584741;
 }
 
-span {
-    font-size: 1.2em;
-}
-
 #showRecepie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: rgba(255, 153, 0, 0.5);
+    margin: auto;
+    margin-top: 2%;
 }
 
 #dish {
+    width: 100%;
     font-size: 2em;
-    color: #f90;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 2%;
 }
 
 img {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 a {
@@ -160,19 +131,14 @@ a {
 }
 
 a span {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 2em;
     text-align: center;
     position: absolute;
     top: 30%;
     left: 50%;
-    padding-top: 1em;
     margin-top: -1em;
     margin-left: -50%;
     width: 100%;
-    height: 2em;
-    color: #f90;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 a span:hover {
@@ -181,6 +147,22 @@ a span:hover {
 
 
 /* inställningar media queries */
+
+@media screen and (max-width:620px) {
+    #showRecepie {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #getDish {
+        flex-direction: column;
+    }
+    label {
+        margin-top: 10px;
+    }
+}
 
 @media screen and (max-width:500px) {
     #runBtn {
@@ -196,32 +178,19 @@ a span:hover {
 
 @media screen and (max-width:450px) {
     h1 {
-        font-size: 1.5em;
+        font-size: 1.7em;
         padding: 1em;
     }
     header {
         height: 100px;
         text-align: center;
     }
-    #getRecepie {
-        padding: 0.7em;
-    }
-    h3 {
-        font-size: 1.5em;
-    }
-    #showRecepie {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        text-align: center;
-    }
-    #dish {
-        font-size: 1.5em;
-        margin-left: 0;
-        margin-right: 0;
+    h3,
+    #dish,
+    a span {
+        font-size: 1.7em;
     }
     a span {
-        font-size: 1.5em;
         top: 20%;
     }
 }
@@ -234,9 +203,5 @@ a span:hover {
     h3,
     a span {
         font-size: 1.3em;
-    }
-    label {
-        display: block;
-        margin-top: 10px;
     }
 }
