@@ -1,3 +1,12 @@
+//Globala variabler
+var vego = document.getElementById("veg"); //ref till checkbox för vegetariska rätter
+var img = document.getElementById("image"); //ref till img elementet
+var dish = document.getElementById("dish"); //ref till element för att visa maträtt
+var recepie = document.getElementById("recepie"); //ref till länk till recept
+var getRec = document.getElementById("getRec"); //ref till span tag för receptlänk
+var runBtn = document.getElementById("runBtn"); //ref till knapp för att starta program
+
+
 //Array med objekt för olika maträtter
 var meals = [
     { name: "FAJITAS", veg: false, url: "http://www.ica.se/recept/original-fajitas-718669/", img: "pics/fajitas.jpg" },
@@ -16,43 +25,35 @@ var meals = [
     { name: "CARROT & COCONUT SOUP", veg: true, url: "http://www.hemtrevligt.se/icakuriren/recept/morotssoppa-med-kokosmjolk", img: "pics/carrotsoup.jpg" }
 ];
 
-//Knapp för att slumpmässigt ta fram recept
-var runBtn = document.getElementById("runBtn");
+
 //Aktivering av händelsehanterare
 runBtn.addEventListener("click", getRecepie);
-
-//Globala variabler
-var vego = document.getElementById("veg");
-var img = document.getElementById("image");
-var dish = document.getElementById("dish");
-var recepie = document.getElementById("recepie");
-var getRec = document.getElementById("getRec");
-
-
 
 
 //Funktion för att slumpmässigt generera recept. Tilldelar sedan namn, länk samt bild till det recept som tagits fram
 function getRecepie() {
+
+    runBtn.innerHTML = "GET ANOTHER DISH"; //lägger in nytt värde på knappen för att ta fram recept
+
     //if-sats för att kontrollera om checkbox för vegetariskt alternativ är ikryssad
-    runBtn.innerHTML = "GET NEW RECEPIE";
-
-
     if (vego.checked === false) {
         var random = Math.floor(meals.length * Math.random());
         dish.innerHTML = meals[random].name;
         recepie.href = meals[random].url;
         image.src = meals[random].img;
-        getRec.innerHTML = "GO TO RECEPIE";
 
-    } else if (vego.checked === true) {
+    }
+    //Om veg elementet är ikryssat så körs loopen och en if-sats kontrollerar om 
+    //veg är true för att endast visa vegetariska rätter
+    else if (vego.checked === true) {
         for (var i = 0; i < meals.length; i++) {
             var random = Math.floor(meals.length * Math.random());
             if (meals[random].veg === true) {
                 dish.innerHTML = meals[random].name;
                 recepie.href = meals[random].url;
                 image.src = meals[random].img;
-                getRec.innerHTML = "GO TO RECEPIE";
             }
         }
     }
+    getRec.innerHTML = "GO TO RECEPIE";
 }
