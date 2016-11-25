@@ -1,4 +1,4 @@
-# Pattis-Food-Generator
+# Uppgift-Food-Generator
 
 Examinationsuppgift att skapa en sida som returnerar en slumpad maträtt.
 
@@ -20,22 +20,3 @@ Din `js`-fil behöver innehålla:
 * En funktion som lägger till maträtten på hemsidan vid varje klick.
 
 
-``````Pseudokod
-
-var maträtter = [
-    { name: "FAJITAS", veg: false, url: "http://www.ica.se/recept/original-fajitas-718669/", img: "pics/fajitas.jpg" },
-    { name: "FAJITAS VEGGIE STYLE", veg: true, url: "http://www.ica.se/recept/fajitas-med-sojafars-och-bonsalsa-719808/", img: "pics/fajitas_veggie.jpg" },
-  
-];
-
-funktion för att hämta recept(){
-
-if-sats som kontrollerar om användaren kryssat i val för vegetariska rätter
-
-*om användaren ej kryssat i ta fram ett slumptal mellan 1 och antal maträtter som finns tillgängliga
-
-Else if-sats för att kontrollera om användaren kryssat i rutan för vegetariska rätter 
-* isf loopa igenom samtliga maträtter och kontrollera sedan om rätten ör vegetarisk för att endast visa vegetariska alternativ
-
-}
-```
