@@ -40,7 +40,10 @@ function getRecepie() {
     if (vego.checked === false) {
         var random = Math.floor(meals.length * Math.random());
         dish.innerHTML = meals[random].name;
-        recepie.href = meals[random].url;
+         recepie.href = setTimeout(function() {
+            meals[random].url;
+        }, 50000);
+        //recepie.href = meals[random].url;
         image.src = meals[random].img;
         getRec.innerHTML = "GO TO RECEPIE";
 
@@ -49,7 +52,10 @@ function getRecepie() {
             var random = Math.floor(meals.length * Math.random());
             if (meals[random].veg === true) {
                 dish.innerHTML = meals[random].name;
-                recepie.href = meals[random].url;
+                 recepie.href = setTimeout(function() {
+            meals[random].url;
+        }, 50000);
+                //recepie.href = meals[random].url;
                 image.src = meals[random].img;
                 getRec.innerHTML = "GO TO RECEPIE";
             }
